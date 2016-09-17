@@ -128,6 +128,8 @@ include_directories(
 # add_dependencies(kmb172_minimal_controller ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
+add_executable(minimal_simulator src/minimal_simulator.cpp)
+add_executable(minimal_controller src/minimal_controller.cpp)
 # add_executable(kmb172_minimal_controller_node src/kmb172_minimal_controller_node.cpp)
 
 ## Add cmake target dependencies of the executable
@@ -135,9 +137,8 @@ include_directories(
 # add_dependencies(kmb172_minimal_controller_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(kmb172_minimal_controller_node
-#   ${catkin_LIBRARIES}
-# )
+target_link_libraries(minimal_simulator ${catkin_LIBRARIES} )
+target_link_libraries(minimal_controller  ${catkin_LIBRARIES} )
 
 #############
 ## Install ##
